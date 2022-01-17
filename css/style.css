@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+:root{
+    --color-head: hsl(212, 27%, 19%);
+    --couleur-description-equipe :hsl(213, 9%, 39%);
+    --couleur-head-equipe: hsl(210, 4%, 67%);
+    --couleur-text: hsl(232, 10%, 55%);
+    --couleur-blanche: hsl(0, 0%, 100%);
+    --graphic-design-text: hsl(167, 40%, 24%);
+    --photography-text: hsl(198, 62%, 26%);
+    --footer: hsl(168, 34%, 41%);
+    --yellow: hsl(51, 100%, 49%);
+    --red :hsl(7, 99%, 70%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+li{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+}
+/*HEADER*/
+header{
+    position: relative;
+    /*image*/
+    background-image: url(../images/mobile/image-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    height: 65vh;
+    width: 100%;
+    /*TEXT*/
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width: 1000px) {
+    header{
+        background-image: url(../images/desktop/image-header.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        font-family: 'Barlow', sans-serif;
+    }
+   
+}
+/*HAMBURGER ET LOGO*/
+.header_top{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.header_top #logo{
+    width: 7rem;
+    height: 1.5rem;
+
+}
+.header_top #hamburger{
+    width: 1.5rem;
+    height: 1.2rem
+
+}
+.header_top #nav-laptop{
+    display: none;
+}
+
+@media screen and (min-width: 1440px) {
+    .header_top{
+        margin: 50px;
+    }
+    .header_top #logo{
+        width: 10rem;
+        height: 2.2rem;
+    }
+    .hamburger-nav{
+        display: none;
+       
+    }
+    .header_top #nav-laptop{
+        display: flex;
+        min-width: 20rem;
+        justify-content: space-between;
+        margin: -1rem 0;
+    }
+    #nav-laptop li{
+        width: 8rem;
+        height: 4rem;    
+    }
+    #nav-laptop li a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        width: 8rem;
+        color: var(--couleur-blanche);
+        font-size: 1.2rem;
+    }
+    #nav-laptop li:hover{
+        background-color: var(--couleur-blanche);
+        border-radius: 2rem;
+    }
+    #nav-laptop li:hover a{
+        color: var(--color-head);
+        font-family: 'Fraunces', serif;
+        text-transform: uppercase;
+        font-size: 1rem;
+    }
+    
+}
+/*Lorsque je clique sur le hamburger*/
+#navigation-telephone{
+    display: none;
+    z-index: 10;
+}
+#navigation-telephone.active{
+    display: block;
+}
+
+.active #right-triangle{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 30px;
+    top: calc(90px - 1.5rem);
+    background-color: white;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%, 100% 0%);
+    z-index: 1;
+}
+.active #nav-phone{
+    width: calc(100% - 60px);
+    position: absolute;
+    inset: 90px 30px 130px;
+    background-color: var(--couleur-blanche);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    gap: 6rem;
+}
+.active #nav-phone li a{
+    color: var(--couleur-text);
+    font-weight: bold;
+}
+.active #contact-phone{
+    background-color: var(--yellow);
+    border-radius: 2rem; 
+    margin-top: 0px;
+    padding: 15px 30px;
+}
+.active #contact-phone #contact-text{
+    color: var(--color-head);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: 'Fraunces', serif;
+}
+
+/*TEXT CENTRER*/
+
+.header-text{
+   height: 15rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.header-text p {
+    font-size: 2.8rem;
+    font-family: 'Fraunces', serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--couleur-blanche);
+    letter-spacing: 0.3rem;
+}
+.header-text img{
+    position: absolute;
+    bottom: 25%;
+}
+
+@media screen and (min-width: 1440px) {
+    .header-text img{
+        bottom: 40%;
+    }
+}
+/*SECTION DE DESCRIPTION GRID DE 6 ITEMS*/
+
+#grid-container{
+    display: grid;
+    grid-template-rows: 40vh 50vh 40vh 50vh 70vh 70vh;
+}
+
+.items1{
+    background-size: cover;
+    background-position: center;
+}
+#item1{
+    background-image: url(../images/mobile/image-transform.jpg);
+
+}
+#item3{
+    background-image: url(../images/mobile/image-stand-out.jpg);
+}
+.items2{
+    display: grid;
+    height: 100%;
+    align-content: center;
+    padding: 80px 40px;
+    text-align: center;
+    gap: 60px;
+}
+.items2 h2{
+    font-family: 'Fraunces', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.items2 p{
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color: var(--couleur-text)
+}
+.learn{
+    justify-self: center;
+    line-height: 0.2rem;
+}
+.items2 a{
+    font-family: 'Fraunces', sans-serif;
+    font-size: 0.9rem;
+    color: var(--couleur-head);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem; 
+}
+.barre{
+    width: 10rem; 
+    height: 1rem;
+    opacity: 0.2;
+    border-radius: 2rem;
+}
+.items2 #barre1{
+    background-color: var(--yellow);
+}
+.items2 #barre2{
+    background-color: var(--red);
+}
+
+#item5{
+    background-image: url(../images/mobile/image-graphic-design.jpg);
+    color: var(--graphic-design-text);
+}
+#item6{
+    background-image: url(../images/mobile/image-photography.jpg);
+    color: var(--photography-text);
+}
+.items3{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    gap: 30px;
+    padding:0 30px 50px;
+    line-height: 1.6rem;
+}
+.items3 h3{
+    font-family:'Fraunces', sans-serif;
+    font-size: 1.8rem;
+}
+.items3 p{
+    font-size: 1.2rem;
+}
+@media screen and (min-width: 1000px){
+    html{
+        font-size: 20px;
+    }
+    #grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 800px 800px 800px;
+        
+    }
+    .items2{
+        margin: 0 100px;
+        gap: 60px;
+    }
+
+    #item2{
+        order: 1;
+    
+
+    }
+    #item1{
+        order: 2;
+        background-image: url(../images/desktop/image-transform.jpg);
+        background-size: cover;
+    }
+    .items1{
+        background-size: cover;
+        background-position: center;
+    }
+    #item3{
+        order: 3;
+        background-image: url(../images/desktop/image-stand-out.jpg);
+    
+
+    }
+    #item4{
+        order: 4;
+    
+
+    }
+    #item5{
+        order: 5;
+        background: url(../images/desktop/image-graphic-design.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    #item6{
+        order: 6;
+        background-image: url(../images/desktop/image-photography.jpg);
+        background-size: cover;
+        background-position: center;
+    
+   }
+   .items2 p{
+    text-align: left;
+    font-size: 1.5rem;
+    }
+}
+@media screen and (min-width: 1440px){
+    .items3{
+        background-position: top 30% center;
+        background-size: cover;
+    }
+    .items2 h2{
+        font-size: 2.3rem;
+    }
+    .items2 p{
+        font-size: 2rem;
+        line-height: 2.8rem;
+    }
+    .items2 a{
+        font-size: 1.5rem;
+    }
+    
+
+}
+
+/*******  CLIENT TESTIMONIAL   *********/
+
+#client-testimonial{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+    margin: 50px 30px;
+    gap: 20px;
+}
+h4{
+    font-family: 'Fraunces', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    color: var(--couleur-head-equipe);
+}
+.client{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.client img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.avis_client{
+    color: var(--couleur-description-equipe);
+    line-height: 1.6rem;
+    margin: 25px 0;
+    font-size: 1.1rem;
+}
+h5{
+    font-family: 'Fraunces', sans-serif;
+    color: var(--color-head);
+    font-size:1.1rem;
+}
+.metier{
+    font-size: 0.9rem;
+    color: var(--couleur-head-equipe);
+    margin-top: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+    #client-testimonial{
+        gap: 50px;
+    }
+    .laptop-client{
+        display:flex;
+        flex-direction: row;
+        gap: 100px;
+    }
+    .client{
+        gap: 20px;
+    
+    }
+}
+@media screen and (min-width: 1440px){
+
+}
+/**********  SECTION QUATRES IMAGES  **************/
+
+.four-image{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.four-image img{
+    height: 100%;
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .four-image{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+/********** FOOTER ************/
+footer{
+    background-color: #9ddbcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding:50px 0;
+    
+}
+#nav-footer{
+    display: flex;
+    gap: 3rem;
+}
+footer svg path{
+    fill: var(--footer);
+}
+#nav-footer li a{
+    color: var(--footer);
+}
+#social-network{
+    display: flex;
+    gap: 20px;
+    padding-top: 30px;
+}
